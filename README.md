@@ -1,5 +1,17 @@
 # Sistema-de-Gestion-de-Eventos-Formativos-UNISON
 Web Application Project for Objet Oriented Analysis and Design subject
+------------------------------------------------------------------
+# Instalar un Virtual Environment (Recomendación)
+Un entorno virtual es un lugar en su sistema donde puede instalar paquetes y aislarlos de todos los demás paquetes de Python.
+Es recomendable crear un entorno virtual en la carpeta donde estaremos trabajando
+```
+# Primero tenemos que instalar virtualenv
+pip install virtualenv
+
+# Luego creamos el virtual environment con el nombre que queramos
+virtualenv cc_env
+
+```
 
 -------------------------------------------------------------------
 # Instalar Django
