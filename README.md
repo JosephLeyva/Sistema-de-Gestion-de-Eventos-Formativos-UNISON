@@ -52,7 +52,7 @@ Si, tenemos Django instalado, sale la versión de su instalación. Si no es así
 # Creación del Proyecto
 Para crear un nuevo proyecto ejectuamos:
 ```
-django-admin startproject cursos_unison
+django-admin startproject cursos_unison .
 ```
 Vemos que se crean los siguientes archivos:
 ```
