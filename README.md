@@ -3,6 +3,7 @@ Web Application Project for Objet Oriented Analysis and Design subject
 
 ## Contributors:
 ### Alberto Leyva  (JosephLeyva) 
+### Vesna Pivac (VesnaPivac)
 
 
 
