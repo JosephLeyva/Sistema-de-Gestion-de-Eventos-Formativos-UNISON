@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'eventos.apps.EventosConfig',
 ]
 
-AUTH_USER_MODEL = 'eventos.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
