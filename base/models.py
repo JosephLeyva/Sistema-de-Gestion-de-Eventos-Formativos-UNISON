@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 class Evento(models.Model):
     nombre = models.CharField(max_length=200)
+    nombre_del_responsable = models.CharField(max_length=200, default='')
     TIPO_EVENTOS = (
             ('Diplomado','Diplomado'),
             ('Curso','Curso'),
