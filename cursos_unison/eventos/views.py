@@ -106,12 +106,14 @@ def updatePropuesta(request, pk):
 @allowed_users(allowed_roles=['RESPONSABLE'])
 def createPropuesta(request,pk):
     responsable = Responsable.objects.get(id=pk)
-    form = EventoForm(initial={'responsable':responsable})
+    form = EventoForm(initial={'responsable':responsable},instance=responsable)
+    form.responsable = responsable
     if request.method == 'POST':
         form = EventoForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('PropuestasEventosFormativos')
+        
 
     context = {'form': form,'responsable':responsable}
     return render(request,'Propuesta_form.html', context)

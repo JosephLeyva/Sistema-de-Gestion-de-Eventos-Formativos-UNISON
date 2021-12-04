@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models.base import Model
 from django.db.models.fields import proxy
+from django.core.validators import MaxValueValidator, MinValueValidator 
 
 # Create your models here.
 
@@ -66,7 +67,6 @@ class Responsable(Usuario):
 
 class Evento(models.Model):
     nombre = models.CharField(max_length=200)
-    nombre_del_responsable = models.CharField(max_length=200, default='')
     TIPO_EVENTOS = (
             ('Diplomado','Diplomado'),
             ('Curso','Curso'),
@@ -89,7 +89,7 @@ class Evento(models.Model):
     Fecha_de_Fin = models.DateField()
     Referencias_y_bibliografia = models.TextField(null=True,blank=True)
     Utilidad_y_Oportunidad_del_programa = models.TextField(null=True)
-    Cupo_Maximo = models.CharField(max_length=3)
+    Cupo_Maximo = models.PositiveIntegerField(default=1,validators=[MinValueValidator(1), MaxValueValidator(200)])
     Requisistos_de_Acreditacion = models.TextField(null=True)
     Experiencia_y_pericia_de_Instructores = models.TextField(null=True)
     Dirigido_a = models.TextField(null=True)
