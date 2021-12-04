@@ -1,0 +1,14 @@
+<h1>Inicio</h1>
+<span>Bienvenido, {{request.user}}</span>
+<span><a href="{% url 'logout' %}">Cerrar Sesion</a></span>
+
+<p>{{request.user.rol}}</p>
+
+<a href="{% url 'ver_perfil' %}">Ver Cuenta</a>
+<hr>
+<a href="{% url 'PropuestasEventosFormativos' %}">Ver Tus Propuestas de Eventos Formativos</a>
+
+
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
