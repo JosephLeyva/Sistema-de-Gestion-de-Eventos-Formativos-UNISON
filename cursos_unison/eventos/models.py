@@ -14,10 +14,10 @@ class Usuario(AbstractUser):
 
 
     rol = models.CharField(max_length=50,choices=Roles.choices,default=Roles.PARTICIPANTE)
-    imagen = models.ImageField(default="user.png",null=True)
+    imagen = models.ImageField(default="male_avatar.svg",null=True)
 
     def __str__(self):
-        return self.first_name + self.last_name
+        return self.first_name + ' ' + self.last_name
 
 class ParticipanteManager(models.Manager):
     def get_queryset(self,*args,**kwargs):

@@ -1,3 +1,6 @@
+
+{% extends 'main.html' %}
+{% block content %}
 <h1>Propuesta Evento Formativo: {{evento.nombre}}</h1>
 <h2>Responsable: {{request.user.first_name}} {{request.user.last_name}}</h2>
 <h3>Tipo: {{evento.TipoEventos}}</h3>
@@ -12,3 +15,5 @@
 <p>{{evento.Fecha_de_Fin}}</p>
 <h3><a href="{% url 'inicio' %}">Inicio</a></h3>
 <a href="{% url 'PropuestasEventosFormativos' %}">Regresar a Propuestas</a>
+
+{% endblock %}

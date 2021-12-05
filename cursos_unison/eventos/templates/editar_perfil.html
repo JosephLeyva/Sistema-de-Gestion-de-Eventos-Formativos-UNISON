@@ -1,3 +1,5 @@
+{% extends 'main.html' %}
+{% block content %}
 <h3>Editar Perfil</h3>
 
 <img src="{{request.user.imagen.url}}" style="width: 200px; height: 200px;" alt="">
@@ -13,3 +15,6 @@
 <a href="{% url 'inicio' %}">Inicio</a>
 
 <a href="{% url 'ver_perfil' %}">Ver Perfil</a>
+
+
+{% endblock %}
