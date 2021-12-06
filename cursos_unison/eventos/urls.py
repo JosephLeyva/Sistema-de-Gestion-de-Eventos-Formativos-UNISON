@@ -15,6 +15,8 @@ urlpatterns = [
 
     path('ver_perfil/',views.verPerfil,name='ver_perfil'),
     path('editar_perfil/',views.editarPerfil,name='editar_perfil'),
+    
+     path('Eventos', views.AllEventos, name="AllEventos"),
 
     # ------------------- EVENTOS FORMATIVOS -------------
     path('PropuestasEventosFormativos/',views.PropuestasEventosFormativos, name="PropuestasEventosFormativos"),
