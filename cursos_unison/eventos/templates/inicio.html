@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
 <h1>Inicio</h1>
-<span>Bienvenido, {{request.user}}</span>
+<span>Bienvenido, {{request.user.username}}</span>
 
 {% for message in messages %}
 <p>{{message}}</p>
