@@ -39,3 +39,10 @@ class EventoForm(forms.ModelForm):
             'Fecha_de_Fin': DateInput(attrs={'type': 'date'}),
         }
 
+
+class PropuestaForm(forms.ModelForm):
+    
+    class Meta:
+        model = Evento
+        fields = ['estatus']
+        

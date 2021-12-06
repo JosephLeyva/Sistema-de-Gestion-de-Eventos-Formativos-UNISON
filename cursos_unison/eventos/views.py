@@ -86,7 +86,6 @@ def Propuesta(request,pk):
 
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['RESPONSABLE'])
 def updatePropuesta(request, pk):
     evento = Evento.objects.get(id=pk)
     form = EventoForm(instance=evento)
@@ -95,7 +94,7 @@ def updatePropuesta(request, pk):
         form = EventoForm(request.POST, instance=evento)
         if form.is_valid():
             form.save()
-            return redirect('PropuestasEventosFormativos')
+            return redirect('inicio')
     context = {'form': form}
     return render(request,'Propuesta_form.html', context)
 
@@ -134,7 +133,20 @@ def AllPropuestas(request):
         return render(request,'AllPropuestas.html', context)
     else:
          return redirect('inicio')
-        
+
+def actualizarEstatus(request,pk):
+    evento = Evento.objects.get(id=pk)
+    form = PropuestaForm(instance=evento)
+
+    if request.method == 'POST':
+        form = PropuestaForm(request.POST, instance=evento)
+        if form.is_valid():
+            form.save()
+            return redirect('inicio')
+    context = {'form': form,'evento':evento}
+    return render(request,'actualizar_estatus.html', context)
+
+
   
 
 @login_required(login_url='login')

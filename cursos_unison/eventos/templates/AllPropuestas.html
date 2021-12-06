@@ -6,7 +6,7 @@
 
 {% for propuesta in Propuestas %}
 <div>
-    {{propuesta.id}} -- <a href="{% url 'Propuesta' propuesta.id %}">{{propuesta.nombre}}</a>
+    {{propuesta.id}} -- <a href="{% url 'actualizarEstatus' propuesta.id %}">{{propuesta.nombre}}</a>
 
     <hr>
 </div>

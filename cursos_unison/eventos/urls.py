@@ -28,4 +28,5 @@ urlpatterns = [
     path('borrar_propuesta/<str:pk>/', views.deletePropuesta, name="deletePropuesta"),
     
      path('Propuestas', views.AllPropuestas, name="AllPropuestas"),
+     path('estatus_propuesta/<str:pk>', views.actualizarEstatus, name="actualizarEstatus"),
 ]

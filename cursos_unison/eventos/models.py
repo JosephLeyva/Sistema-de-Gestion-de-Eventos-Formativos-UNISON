@@ -75,7 +75,7 @@ class Evento(models.Model):
         )
     TipoEventos =  models.CharField(max_length=30,null=True,choices=TIPO_EVENTOS)
     TIPO_MODALIDAD = (
-            ('En Lineal', 'En Lineal'),
+            ('En Linea', 'En Linea'),
             ('Presencial','Presencial'),
             ('Mixta','Mixta')
         )
