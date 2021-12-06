@@ -9,7 +9,7 @@
 {% for evento in eventosformativos %}
 <div>
     {{evento.id}} -- <a href="{% url 'Propuesta' evento.id %}">{{evento.nombre}}</a>
-    <br>
+    <hr>
 </div>
 {% endfor %}
 
