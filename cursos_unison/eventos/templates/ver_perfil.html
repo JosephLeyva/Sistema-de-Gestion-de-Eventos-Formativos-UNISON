@@ -8,8 +8,6 @@
 <p>Nombre: {{request.user.first_name}} {{request.user.last_name}}</p>
 <p>Correo: {{request.user.email}}</p>
 
-<a href="{% url 'inicio' %}">Inicio</a>
-
 <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
 
 {% endblock %}
