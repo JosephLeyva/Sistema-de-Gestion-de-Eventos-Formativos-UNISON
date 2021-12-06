@@ -6,12 +6,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'AllPropuestas' %}">Propuestas</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'AllEventos' %}">Eventos</a>
+            </li>
         </ul>
         {% endif %}
         {% if request.user.rol == 'RESPONSABLE' %}
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'PropuestasEventosFormativos' %}">Tus Propuestas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'AllEventos' %}">Eventos</a>
             </li>
         </ul>
         {% endif %}
