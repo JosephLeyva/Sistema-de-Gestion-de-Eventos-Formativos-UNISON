@@ -95,7 +95,7 @@ class Evento(models.Model):
     Dirigido_a = models.TextField(null=True)
     Requisitos_de_Participacion = models.TextField(null=True)
     Curriculum_de_los_Instructores = models.TextField(null=True)
-    Capacidad_de_utofinanciamiento = models.TextField(null=True,blank=True)
+    Capacidad_de_autofinanciamiento = models.TextField(null=True,blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     responsable = models.ForeignKey(Usuario, null=True, on_delete= models.SET_NULL,default=Usuario)
