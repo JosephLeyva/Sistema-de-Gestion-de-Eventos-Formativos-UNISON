@@ -80,7 +80,7 @@ def PropuestasEventosFormativos(request):
 
 @login_required(login_url='login')
 def Propuesta(request,pk):
-    if((request.user.is_superuser) or (request.user.rol == ['RESPONSABLE'])):
+    if((request.user.is_superuser) | (request.user.rol == 'RESPONSABLE')):
         evento = Evento.objects.get(id=pk)
         context = {'evento':evento}
         return render(request,'Propuesta.html', context)
