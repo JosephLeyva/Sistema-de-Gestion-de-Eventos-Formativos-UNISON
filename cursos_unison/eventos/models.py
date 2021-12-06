@@ -99,7 +99,7 @@ class Evento(models.Model):
     Capacidad_de_autofinanciamiento = models.TextField(null=True,blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    responsable = models.ForeignKey(Usuario, null=True, on_delete= models.SET_NULL,default=Usuario)
+    responsable = models.ForeignKey(Responsable, null=True, on_delete= models.SET_NULL,default=Responsable)
     ESTATUS = (
             ('Aceptado','Aceptado'),
             ('Pendiente','Pendiente'),
