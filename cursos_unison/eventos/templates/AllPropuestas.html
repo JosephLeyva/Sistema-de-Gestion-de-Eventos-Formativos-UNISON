@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2>Propuestas Eventos Formativos</h2>
+
+<a href="{% url 'inicio' %}"> Inicio </a>
+
+<h5>{{propuesta_count}} propuestas</h5>
+
+{% for evento in Evento %}
+<div>
+    {{evento.id}} -- <a href="{% url 'Propuesta' evento.id %}">{{evento.nombre}}</a>
+   <!-- <a href="{% url 'aceptarPropuesta' evento.id %}">Editar</a> -->
+   <!---- <a href="{% url 'rechazarPropuesta' evento.id %}">Borrar</a> -->
+    <hr>
+</div>
+{% endfor %}
+
+{% endblock %}
