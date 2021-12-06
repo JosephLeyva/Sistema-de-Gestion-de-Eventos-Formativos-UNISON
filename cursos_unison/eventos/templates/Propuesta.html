@@ -16,8 +16,10 @@
 <h3><a href="{% url 'inicio' %}">Inicio</a></h3>
 {% if request.user.rol == 'RESPONSABLE' %}
     <a href="{% url 'PropuestasEventosFormativos' %}">Regresar a Propuestas</a>
-{% else %}
+{% elif request.user.rol != 'PARTICIPANTE' and request.user.is_superuser %}
     <a href="{% url 'AllPropuestas' %}">Regresar a Propuestas</a>
+{% else %}
+    <a href="{% url 'AllEventos' %}">Regresar a Eventos</a>
 {% endif %}
 
 {% endblock %}
