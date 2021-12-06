@@ -13,7 +13,7 @@
 <p>{{evento.Fecha_de_Inicio}}</p>
 <h3>Fecha de Fin</h3>
 <p>{{evento.Fecha_de_Fin}}</p>
-<h3><a href="{% url 'inicio' %}">Inicio</a></h3>
+
 {% if request.user.rol == 'RESPONSABLE' %}
     <a href="{% url 'PropuestasEventosFormativos' %}">Regresar a Propuestas</a>
 {% elif request.user.rol != 'PARTICIPANTE' and request.user.is_superuser %}
