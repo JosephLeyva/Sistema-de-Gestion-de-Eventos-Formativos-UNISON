@@ -4,6 +4,9 @@
          {% if request.user.is_superuser %}
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
+                <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'AllPropuestas' %}">Propuestas</a>
             </li>
             <li class="nav-item">
@@ -13,6 +16,9 @@
         {% endif %}
         {% if request.user.rol == 'RESPONSABLE' %}
         <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'PropuestasEventosFormativos' %}">Tus Propuestas</a>
             </li>
@@ -26,6 +32,9 @@
         {% endif %}
         {% if request.user.rol == 'PARTICIPANTE' and request.user.is_superuser == False %}
         <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'AllEventos' %}">Eventos</a>
             </li>
