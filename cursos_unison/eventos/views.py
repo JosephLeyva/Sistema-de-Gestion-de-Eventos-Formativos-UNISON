@@ -80,13 +80,9 @@ def PropuestasEventosFormativos(request):
 
 @login_required(login_url='login')
 def Propuesta(request,pk):
-    if((request.user.is_superuser) | (request.user.rol == 'RESPONSABLE')):
-        evento = Evento.objects.get(id=pk)
-        context = {'evento':evento}
-        return render(request,'Propuesta.html', context)
-    else:
-        return redirect('inicio')
-
+    evento = Evento.objects.get(id=pk)
+    context = {'evento':evento}
+    return render(request,'Propuesta.html', context)
 
 
 @login_required(login_url='login')
@@ -150,9 +146,11 @@ def AllEventos(request):
 
 @login_required(login_url='login')
 def TusEventos(request):
-    responsable = request.user
-    eventosformativos = request.user.evento_set.filter(estatus = 'Aceptado')
-    propuesta_count = eventosformativos.count()
-    context = {'eventosformativos':eventosformativos, 'propuesta_count':propuesta_count,'responsable':responsable}
-    return render(request,'TusEventos.html', context)
-
+    if(((request.user.is_superuser)&(request.user.rol != 'PARTICIPANTE')) | (request.user.rol == 'RESPONSABLE')):
+        responsable = request.user
+        eventosformativos = request.user.evento_set.filter(estatus = 'Aceptado')
+        propuesta_count = eventosformativos.count()
+        context = {'eventosformativos':eventosformativos, 'propuesta_count':propuesta_count,'responsable':responsable}
+        return render(request,'TusEventos.html', context)
+    else:
+        return redirect('inicio')
