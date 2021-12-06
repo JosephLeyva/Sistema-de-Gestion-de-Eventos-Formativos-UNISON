@@ -148,4 +148,11 @@ def AllEventos(request):
         context = {'Propuestas':Propuestas, 'propuesta_count':propuesta_count}
         return render(request,'Eventos.html', context)
 
+@login_required(login_url='login')
+def TusEventos(request):
+    responsable = request.user
+    eventosformativos = request.user.evento_set.filter(estatus = 'Aceptado')
+    propuesta_count = eventosformativos.count()
+    context = {'eventosformativos':eventosformativos, 'propuesta_count':propuesta_count,'responsable':responsable}
+    return render(request,'TusEventos.html', context)
 
