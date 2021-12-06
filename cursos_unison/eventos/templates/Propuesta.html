@@ -2,7 +2,7 @@
 {% extends 'main.html' %}
 {% block content %}
 <h1>Propuesta Evento Formativo: {{evento.nombre}}</h1>
-<h2>Responsable: {{request.user.first_name}} {{request.user.last_name}}</h2>
+<h2>Responsable:  {{evento.responsable}}</h2>
 <h3>Tipo: {{evento.TipoEventos}}</h3>
 <h3>Modalidad: {{evento.modalidad}}</h3>
 <h3>Objetivos:</h3>
