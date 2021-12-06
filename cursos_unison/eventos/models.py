@@ -85,6 +85,7 @@ class Evento(models.Model):
     contenido = models.TextField(null=True)
     recursos_y_materiales = models.TextField(null=True,blank=True)
     Estrategias_de_Evaluacion = models.TextField(null=True)
+    Duracion_en_horas = models.PositiveIntegerField(default=1,validators=[MinValueValidator(10), MaxValueValidator(400)])
     Fecha_de_Inicio = models.DateField()
     Fecha_de_Fin = models.DateField()
     Referencias_y_bibliografia = models.TextField(null=True,blank=True)
