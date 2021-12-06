@@ -79,12 +79,13 @@ def PropuestasEventosFormativos(request):
     return render(request,'PropuestasEventosFormativos.html', context)
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['RESPONSABLE'])
 def Propuesta(request,pk):
-    evento = Evento.objects.get(id=pk)
-    context = {'evento':evento}
-    return render(request,'Propuesta.html', context)
-
+    if((request.user.is_superuser) or (request.user.rol == ['RESPONSABLE'])):
+        evento = Evento.objects.get(id=pk)
+        context = {'evento':evento}
+        return render(request,'Propuesta.html', context)
+    else:
+        return redirect('inicio')
 
 
 
@@ -131,8 +132,6 @@ def deletePropuesta(request, pk):
 @login_required(login_url='login')
 def AllPropuestas(request):
    if request.user.is_superuser:
-        #responsable = request.user
-        #eventosformativos = request.user.evento_set.all()
         Propuestas = Evento.objects.all()
         propuesta_count = Propuestas.count()
         context = {'Propuestas':Propuestas, 'propuesta_count':propuesta_count}
