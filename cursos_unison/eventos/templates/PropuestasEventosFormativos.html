@@ -12,6 +12,8 @@
 <div>
     {{evento.id}} -- <a href="{% url 'Propuesta' evento.id %}">{{evento.nombre}}</a>
     <br>
+    {{evento.estatus}}
+    <br>
     <a href="{% url 'updatePropuesta' evento.id %}">Editar</a>
     <a href="{% url 'deletePropuesta' evento.id %}">Borrar</a>
     <hr>
