@@ -138,3 +138,14 @@ def AllPropuestas(request):
         return render(request,'AllPropuestas.html', context)
     else:
          return redirect('inicio')
+        
+  
+
+@login_required(login_url='login')
+def AllEventos(request):
+        Propuestas = Evento.objects.filter(estatus = 'Aceptado')
+        propuesta_count = Propuestas.count()
+        context = {'Propuestas':Propuestas, 'propuesta_count':propuesta_count}
+        return render(request,'Eventos.html', context)
+
+
