@@ -99,6 +99,12 @@ class Evento(models.Model):
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     responsable = models.ForeignKey(Usuario, null=True, on_delete= models.SET_NULL,default=Usuario)
+    ESTATUS = (
+            ('Activo','Activo'),
+            ('Pendiente','Pendiente'),
+            ('Deshabilitado','Deshabilitado')
+        )
+    estatus = models.CharField(max_length=20,default=ESTATUS[1], choices=ESTATUS)
 
     class Meta:
         ordering = ['created']
