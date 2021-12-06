@@ -73,7 +73,7 @@ def editarPerfil(request):
 @allowed_users(allowed_roles=['RESPONSABLE'])
 def PropuestasEventosFormativos(request):
     responsable = request.user
-    eventosformativos = request.user.evento_set.all()
+    eventosformativos = request.user.evento_set.filter(estatus = 'Pendiente')
     propuesta_count = eventosformativos.count()
     context = {'eventosformativos':eventosformativos, 'propuesta_count':propuesta_count,'responsable':responsable}
     return render(request,'PropuestasEventosFormativos.html', context)
