@@ -23,12 +23,12 @@ class DateInput(forms.DateInput):
 
 class EventoForm(forms.ModelForm):
     disabled_fields = ['responsable']
-    def __init__(self, *args, **kwargs):
-        super(EventoForm, self).__init__(*args, **kwargs)
-        instance = getattr(self, 'instance', None)
-        if instance and instance.pk:
-            for field in self.disabled_fields:
-                self.fields[field].disabled = True
+   # def __init__(self, *args, **kwargs):
+   #    super(EventoForm, self).__init__(*args, **kwargs)
+   #     instance = getattr(self, 'instance', None)
+   #     if instance and instance.pk:
+   #         for field in self.disabled_fields:
+   #             self.fields[field].disabled = True
        
  
     class Meta:
