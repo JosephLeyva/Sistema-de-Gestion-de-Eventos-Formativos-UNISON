@@ -126,3 +126,16 @@ def deletePropuesta(request, pk):
         evento.delete()
         return redirect('PropuestasEventosFormativos')
     return render(request,'borrar_evento.html', {'obj':evento})
+
+#-----------Consejo Divisional --------------#
+@login_required(login_url='login')
+def AllPropuestas(request):
+   if request.user.is_superuser:
+        #responsable = request.user
+        #eventosformativos = request.user.evento_set.all()
+        Propuestas = Evento.objects.all()
+        propuesta_count = Propuestas.count()
+        context = {'Propuestas':Propuestas, 'propuesta_count':propuesta_count}
+        return render(request,'AllPropuestas.html', context)
+    else:
+         return redirect('inicio')
