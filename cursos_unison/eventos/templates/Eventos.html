@@ -9,7 +9,7 @@
 {% for propuesta in Propuestas %}
 <div>
     {{propuesta.id}} -- <a href="{% url 'Propuesta' propuesta.id %}">{{propuesta.nombre}}</a>
-    <br>
+    <hr>
 </div>
 {% endfor %}
 
