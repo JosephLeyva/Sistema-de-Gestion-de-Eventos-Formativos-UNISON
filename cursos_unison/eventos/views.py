@@ -131,7 +131,7 @@ def deletePropuesta(request, pk):
 #-----------Consejo Divisional --------------#
 @login_required(login_url='login')
 def AllPropuestas(request):
-   if request.user.is_superuser:
+    if request.user.is_superuser:
         Propuestas = Evento.objects.filter(estatus = 'Pendiente')
         propuesta_count = Propuestas.count()
         context = {'Propuestas':Propuestas, 'propuesta_count':propuesta_count}
