@@ -100,9 +100,9 @@ class Evento(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     responsable = models.ForeignKey(Usuario, null=True, on_delete= models.SET_NULL,default=Usuario)
     ESTATUS = (
-            ('Activo','Activo'),
+            ('Aceptado','Aceptado'),
             ('Pendiente','Pendiente'),
-            ('Deshabilitado','Deshabilitado')
+            ('Rechazado','Rechazado')
         )
     estatus = models.CharField(max_length=20,default=ESTATUS[1], choices=ESTATUS)
 
