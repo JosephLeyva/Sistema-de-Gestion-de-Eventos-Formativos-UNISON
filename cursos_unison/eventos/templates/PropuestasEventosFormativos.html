@@ -4,7 +4,7 @@
 
 <a href="{% url 'inicio' %}"> Inicio </a>
 
-<h5>{{propuesta_count}} propuestas</h5>
+<h5>{{propuesta_count}} {% if propuesta_count < 2 %} Propuesta {% else %} Propuestas {% endif %}</h5>
 <a href="{% url 'createPropuesta' responsable.id %}">Nueva Propuesta</a>
 <hr>
 
