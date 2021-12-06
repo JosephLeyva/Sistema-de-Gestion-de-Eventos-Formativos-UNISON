@@ -16,7 +16,9 @@ urlpatterns = [
     path('ver_perfil/',views.verPerfil,name='ver_perfil'),
     path('editar_perfil/',views.editarPerfil,name='editar_perfil'),
     
-     path('Eventos', views.AllEventos, name="AllEventos"),
+    path('Eventos', views.AllEventos, name="AllEventos"),
+    path('TusEventos', views.TusEventos, name="TusEventos"),
+
 
     # ------------------- EVENTOS FORMATIVOS -------------
     path('PropuestasEventosFormativos/',views.PropuestasEventosFormativos, name="PropuestasEventosFormativos"),
