@@ -22,4 +22,6 @@ urlpatterns = [
     path('editar_propuesta/<str:pk>', views.updatePropuesta, name="updatePropuesta"),
     path('crear_propuesta/<str:pk>/', views.createPropuesta, name="createPropuesta"),
     path('borrar_propuesta/<str:pk>/', views.deletePropuesta, name="deletePropuesta"),
+    
+     path('Propuestas', views.AllPropuestas, name="AllPropuestas"),
 ]
