@@ -4,7 +4,17 @@ El siguiente proyecto fue un prototipo realizado para la asignatura de Análisis
 
 Para este proyecto se siguieron algunas reglas de Ingeniería de Software y del Uso de Diagramas UML para realizar tanto como el análisis como el diseño antes de empezar propiamente con la implementación del sistema. Dicha implementación se realizó con el framework **Django** para Python, usando HTML y CSS para las plantillas.
 
+-----
 Para ver el prototipo ingrese [**AQUI**](https://sistema-gestion-eventos-unison.herokuapp.com/)
+
+------
+### Integrantes
+
+- Hugo Alberto Eguino Arámbula
+- José Alberto Leyva Contreras
+- Pivac Alcaraz Vesna Camile
+- Pesqueira Vázquez Jesús Ernesto
+
 
 ## Diagramas UML
 
