@@ -4,6 +4,8 @@ El siguiente proyecto fue un prototipo realizado para la asignatura de Análisis
 
 Para este proyecto se siguieron algunas reglas de Ingeniería de Software y del Uso de Diagramas UML para realizar tanto como el análisis como el diseño antes de empezar propiamente con la implementación del sistema. Dicha implementación se realizó con el framework **Django** para Python, usando HTML y CSS para las plantillas.
 
+Para ver el prototipo ingrese [**AQUI**](https://sistema-gestion-eventos-unison.herokuapp.com/)
+
 ## Diagramas UML
 
 El lenguaje de modelado unificado (UML) es el lenguaje de modelado principal que se utiliza para analizar, especificar y diseñar sistemas de software. A medida que los lenguajes de programación orientados a objetos comenzaron a ser utilizados en la industria del software, comenzaron a aparecer metodologías orientadas a objetos.
